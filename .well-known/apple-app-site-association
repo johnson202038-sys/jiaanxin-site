@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "A48YVZ4APR.com.chenrong.medicinereminder",
+        "paths": [
+          "/assist/t/*"
+        ]
+      }
+    ]
+  }
+}

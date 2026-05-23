@@ -7,6 +7,8 @@
 - `https://www.jiaanxin.app/privacy/`
 - `https://www.jiaanxin.app/terms/`
 - `https://www.jiaanxin.app/support/`
+- `https://www.jiaanxin.app/.well-known/apple-app-site-association`
+- `https://www.jiaanxin.app/.well-known/assetlinks.json`
 
 支援信箱：
 

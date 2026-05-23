@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.jiaanxin.mobile",
+      "sha256_cert_fingerprints": [
+        "52:7F:AF:81:55:1A:B1:A3:21:76:79:56:46:88:88:64:D7:10:3D:1F:FF:97:27:DD:3D:34:20:14:35:0D:E6:11"
+      ]
+    }
+  }
+]
