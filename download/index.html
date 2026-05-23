@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>下載家安心｜家安心</title>
+    <meta
+      name="description"
+      content="下載家安心 iPhone App 或 Android 暫時 APK 安裝檔。"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主要導覽">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 3.5 5.2 6.4v5.1c0 4.3 2.8 7.9 6.8 9 4-1.1 6.8-4.7 6.8-9V6.4L12 3.5Z" fill="currentColor" opacity=".95" />
+              <path d="M8.4 12h7.2M12 8.8v6.4" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span>家安心</span>
+        </a>
+        <div class="nav-links">
+          <a href="/download/" aria-current="page">下載</a>
+          <a href="/privacy/">隱私權政策</a>
+          <a href="/terms/">使用者條款</a>
+          <a href="/support/">Support</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <article class="download-page">
+        <div class="page-title">
+          <p class="eyebrow">iPhone / Android 共通入口</p>
+          <h1>下載家安心</h1>
+          <p class="updated">
+            掃描 QR Code 或從 LINE 開啟時，請依手機系統選擇下載方式。
+          </p>
+        </div>
+
+        <div class="platform-grid" aria-label="下載選項">
+          <section class="platform-card platform-ios" aria-labelledby="ios-title">
+            <p class="download-kicker">iPhone</p>
+            <h2 id="ios-title">從 App Store 下載</h2>
+            <p>
+              iPhone 使用者請前往 App Store 安裝家安心。若 LINE 內建瀏覽器沒有自動開啟 App Store，可改用 Safari 開啟本頁。
+            </p>
+            <a
+              class="primary-button"
+              href="https://apps.apple.com/tw/app/%E5%AE%B6%E5%AE%89%E5%BF%83/id6762098612?uo=4"
+            >
+              前往 App Store
+            </a>
+          </section>
+
+          <section class="platform-card platform-android" aria-labelledby="android-title">
+            <p class="download-kicker">Android 暫時下載版</p>
+            <h2 id="android-title">下載 Android APK</h2>
+            <p>
+              Google Play 尚未公開上架前，可先下載 Android 1.0 (5) APK 安裝檔。這是非 Google Play 安裝，Android 可能會顯示安全提示或要求允許未知來源。
+            </p>
+            <a
+              class="primary-button"
+              href="https://github.com/johnson202038-sys/jiaanxin-site/releases/download/android-v1.0-5/jiaanxin-android-1.0-5.apk"
+            >
+              下載 Android APK
+            </a>
+            <div class="notice">
+              <strong>Android 安裝提醒</strong>
+              <ol>
+                <li>若在 LINE 內無法安裝，請按右上角選單，改用 Chrome 或手機瀏覽器開啟本頁。</li>
+                <li>下載完成後，請從瀏覽器下載紀錄或手機「檔案」App 開啟 APK。</li>
+                <li>若跳出未知來源權限，請允許 Chrome、瀏覽器或檔案管理器安裝此檔案。</li>
+                <li>若跳出 Google Play Protect 或 Play 商店搜尋畫面，這是站外 APK 臨時下載常見提示，仍可能需要服務人員協助完成。</li>
+              </ol>
+            </div>
+            <p class="checksum">
+              SHA-256：18fb1e7bbbf231703d50e15b71491e335370d127f8db632f316cdc91966566f7
+            </p>
+          </section>
+        </div>
+
+        <section class="download-note" aria-labelledby="download-note-title">
+          <h2 id="download-note-title">下載 QR 的用途</h2>
+          <p>
+            這個頁面只是家安心的共通下載入口，不綁服務人員、不建立協助歸因，也不計入服務任務。服務人員協助 QR 會使用另一種專屬連結。
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div>© 2026 家安心。開發者：沈辰融。</div>
+      <nav aria-label="頁尾導覽">
+        <a href="/download/">下載</a>
+        <a href="/privacy/">隱私權政策</a>
+        <a href="/terms/">使用者條款</a>
+        <a href="/support/">Support</a>
+      </nav>
+    </footer>
+
+    <script>
+      (function () {
+        var ua = navigator.userAgent || "";
+        var body = document.body;
+        if (/iPhone|iPad|iPod/i.test(ua)) {
+          body.classList.add("is-ios");
+        } else if (/Android/i.test(ua)) {
+          body.classList.add("is-android");
+        }
+        if (/Line\//i.test(ua)) {
+          body.classList.add("is-line-browser");
+        }
+      })();
+    </script>
+  </body>
+</html>

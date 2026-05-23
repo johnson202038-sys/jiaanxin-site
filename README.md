@@ -4,6 +4,7 @@
 
 正式頁面：
 
+- `https://www.jiaanxin.app/download/`
 - `https://www.jiaanxin.app/privacy/`
 - `https://www.jiaanxin.app/terms/`
 - `https://www.jiaanxin.app/support/`

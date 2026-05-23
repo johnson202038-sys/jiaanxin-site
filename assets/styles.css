@@ -193,6 +193,7 @@ h1 {
 
 .primary-button:focus-visible,
 .quick-link:focus-visible,
+.platform-card:focus-within,
 .nav-links a:focus-visible,
 .brand:focus-visible {
   outline: 3px solid rgba(47, 127, 99, 0.3);
@@ -249,6 +250,11 @@ h1 {
   overflow: hidden;
 }
 
+.download-page {
+  display: grid;
+  gap: 18px;
+}
+
 .page-title {
   background: linear-gradient(135deg, var(--soft), #fff);
   border-bottom: 1px solid var(--line);
@@ -267,6 +273,72 @@ h1 {
 
 .content {
   padding: 28px clamp(20px, 4vw, 48px) 44px;
+}
+
+.platform-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.platform-card,
+.download-note {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: clamp(20px, 4vw, 34px);
+}
+
+.platform-card h2,
+.download-note h2 {
+  color: var(--ink);
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  line-height: 1.2;
+  margin: 4px 0 12px;
+}
+
+.platform-card p,
+.download-note p {
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.platform-ios {
+  border-color: #cfddd9;
+}
+
+.platform-android {
+  background: var(--soft);
+  border-color: #cddfd6;
+}
+
+.download-note {
+  background: var(--soft-accent);
+  border-color: #f1d5aa;
+}
+
+.download-note h2 {
+  font-size: 1.25rem;
+}
+
+.notice strong {
+  display: block;
+  margin: 0 0 8px;
+}
+
+.notice ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.notice li {
+  margin: 5px 0;
+}
+
+.is-ios .platform-android,
+.is-android .platform-ios {
+  display: none;
 }
 
 .content h2 {
@@ -355,5 +427,9 @@ h1 {
   .home-hero {
     grid-template-columns: 1fr;
     min-height: auto;
+  }
+
+  .platform-grid {
+    grid-template-columns: 1fr;
   }
 }
