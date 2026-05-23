@@ -281,8 +281,7 @@ h1 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.platform-card,
-.download-note {
+.platform-card {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -290,16 +289,14 @@ h1 {
   padding: clamp(20px, 4vw, 34px);
 }
 
-.platform-card h2,
-.download-note h2 {
+.platform-card h2 {
   color: var(--ink);
   font-size: clamp(1.45rem, 3vw, 2.2rem);
   line-height: 1.2;
   margin: 4px 0 12px;
 }
 
-.platform-card p,
-.download-note p {
+.platform-card p {
   color: var(--muted);
   margin: 0 0 16px;
 }
@@ -311,15 +308,6 @@ h1 {
 .platform-android {
   background: var(--soft);
   border-color: #cddfd6;
-}
-
-.download-note {
-  background: var(--soft-accent);
-  border-color: #f1d5aa;
-}
-
-.download-note h2 {
-  font-size: 1.25rem;
 }
 
 .notice strong {
