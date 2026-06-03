@@ -21,6 +21,7 @@ if [[ "$ACTUAL_SHA256" != "$EXPECTED_SHA256" ]]; then
 fi
 
 npx --yes wrangler@latest r2 object put "$BUCKET/$KEY" \
+  --remote \
   --file "$APK_PATH" \
   --content-type "application/vnd.android.package-archive" \
   --content-disposition "attachment; filename=\"$FILENAME\"" \

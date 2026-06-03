@@ -32,7 +32,6 @@ Do not commit the APK or AAB into this repository.
 - The object must be uploaded with attachment HTTP metadata:
   - `Content-Type: application/vnd.android.package-archive`
   - `Content-Disposition: attachment; filename="jiaanxin-android-1.0-6-play-signed.apk"`
-  - `X-Content-Type-Options: nosniff`
   - `Cache-Control: public, max-age=31536000, immutable`
 
 ## Wrangler flow
@@ -71,3 +70,13 @@ shasum -a 256 /private/tmp/jiaanxin-apk6-download-check.apk
 Only after the first-party URL returns the correct headers and checksum should
 `download/index.html` be updated to point at `download.jiaanxin.app`.
 
+## 2026-06-03 verification
+
+- Bucket `jiaanxin-downloads` exists in Cloudflare R2.
+- Object uploaded to remote R2 with `--remote`.
+- Custom domain `download.jiaanxin.app` is active and enabled.
+- Public HEAD verification returned `HTTP/2 200`, APK content type,
+  attachment content disposition, content length `84057722`, and immutable
+  cache control.
+- Public download checksum matched
+  `462c7be07735bd8abbe5efec4a00bf309c982cc8620c0557afce34a0435307f2`.
