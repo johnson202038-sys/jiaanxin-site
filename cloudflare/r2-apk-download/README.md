@@ -3,23 +3,24 @@
 This folder documents the Cloudflare R2 setup for serving the temporary Android
 APK from a first-party attachment URL:
 
-`https://download.jiaanxin.app/android/jiaanxin-android-1.0-6-play-signed.apk`
+`https://download.jiaanxin.app/android/jiaanxin-android-1.0-7-play-signed.apk`
 
 ## Current artifact
 
 - Local verified APK:
-  `/private/tmp/medicine-apk-verify/jiaanxin-android-1.0-6-play-signed.apk`
+  `/private/tmp/medicine-apk-verify/jiaanxin-android-1.0-7-play-signed.apk`
 - Filename:
-  `jiaanxin-android-1.0-6-play-signed.apk`
+  `jiaanxin-android-1.0-7-play-signed.apk`
 - Object key:
-  `android/jiaanxin-android-1.0-6-play-signed.apk`
+  `android/jiaanxin-android-1.0-7-play-signed.apk`
 - Size:
-  `84,057,722 bytes`
+  `84,070,010 bytes`
 - SHA-256:
-  `462c7be07735bd8abbe5efec4a00bf309c982cc8620c0557afce34a0435307f2`
+  `a15e56e68a4500f71eaed766277c700b4ce84b402bce068514c6bde7cec992a3`
 - Verified:
-  package `app.jiaanxin.mobile`, `versionCode=6`, `versionName=1.0`,
-  `apksigner verify` PASS, `unzip -t` PASS.
+  package `app.jiaanxin.mobile`, `versionCode=7`, `versionName=1.0`,
+  `apksigner verify --verbose` PASS, `unzip -t` PASS, ADB install and
+  launch smoke PASS.
 
 Do not commit the APK or AAB into this repository.
 
@@ -31,7 +32,7 @@ Do not commit the APK or AAB into this repository.
 - The custom domain should not be registered as an Android App Link.
 - The object must be uploaded with attachment HTTP metadata:
   - `Content-Type: application/vnd.android.package-archive`
-  - `Content-Disposition: attachment; filename="jiaanxin-android-1.0-6-play-signed.apk"`
+  - `Content-Disposition: attachment; filename="jiaanxin-android-1.0-7-play-signed.apk"`
   - `Cache-Control: public, max-age=31536000, immutable`
 
 ## Wrangler flow
@@ -47,7 +48,7 @@ If the bucket already exists, skip creation.
 Upload the verified APK:
 
 ```bash
-cloudflare/r2-apk-download/upload-apk6-to-r2.sh
+cloudflare/r2-apk-download/upload-apk7-to-r2.sh
 ```
 
 Attach the custom domain. Wrangler currently requires the Cloudflare zone id:
@@ -61,10 +62,10 @@ npx --yes wrangler@latest r2 bucket domain add jiaanxin-downloads \
 Then verify:
 
 ```bash
-curl -sS -I https://download.jiaanxin.app/android/jiaanxin-android-1.0-6-play-signed.apk
-curl -sS https://download.jiaanxin.app/android/jiaanxin-android-1.0-6-play-signed.apk \
-  -o /private/tmp/jiaanxin-apk6-download-check.apk
-shasum -a 256 /private/tmp/jiaanxin-apk6-download-check.apk
+curl -sS -I https://download.jiaanxin.app/android/jiaanxin-android-1.0-7-play-signed.apk
+curl -sS https://download.jiaanxin.app/android/jiaanxin-android-1.0-7-play-signed.apk \
+  -o /private/tmp/jiaanxin-apk7-download-check.apk
+shasum -a 256 /private/tmp/jiaanxin-apk7-download-check.apk
 ```
 
 Only after the first-party URL returns the correct headers and checksum should
@@ -80,3 +81,14 @@ Only after the first-party URL returns the correct headers and checksum should
   cache control.
 - Public download checksum matched
   `462c7be07735bd8abbe5efec4a00bf309c982cc8620c0557afce34a0435307f2`.
+
+## 2026-06-04 APK7 verification
+
+- Object uploaded to remote R2 with `--remote`.
+- Public URL:
+  `https://download.jiaanxin.app/android/jiaanxin-android-1.0-7-play-signed.apk`
+- Public HEAD verification returned `HTTP/2 200`, APK content type,
+  attachment content disposition, content length `84070010`, and immutable
+  cache control.
+- Public download checksum matched
+  `a15e56e68a4500f71eaed766277c700b4ce84b402bce068514c6bde7cec992a3`.
